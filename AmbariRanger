@@ -1,0 +1,54 @@
+Ambari -
+
+https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.0.0/ambari-authentication-ldap-ad/content/amb_generic_ldap_setup_example.html
+
+ambari-server setup-ldap
+ambari-server sync-ldap --all
+
+====================
+Primary LDAP Host (madhu.vpc.cloudera.com):  madhu.vpc.cloudera.com
+Primary LDAP Port (389):  389
+Use SSL [true/false] (false):  false
+User object class (organizationalPerson):  organizationalPerson
+User ID attribute (uid):  uid
+Group object class (groupOfNames):  groupOfNames
+Group name attribute (cn):  cn
+Group member attribute (uniquemember):  memberUid
+Distinguished name attribute (dn):  dn
+Search Base (dc=test,dc=com):  dc=test,dc=com
+Referral method [follow/ignore] (follow):  follow
+Bind anonymously [true/false] (false):  false
+Handling behavior for username collisions [convert/skip] for LDAP sync (convert):  convert
+Force lower-case user names [true/false] (true): true
+Results from LDAP are paginated when requested [true/false] (false): false
+ambari.ldap.connectivity.bind_dn: cn=service,dc=test,dc=com
+ambari.ldap.connectivity.bind_password: *****
+Save settings [y/n] (y)?
+
+++++++
+++++++
+
+Syncing ranger with ldap.
+
+COMMON CONFIGS:
+===============
+LDAP/AD URL ldap://madhu.vpc.cloudera.com:389
+Bind USer cn=service,dc=test,dc=com
+Bind User Password admin
+Incremental sync no
+Enable LDAP Start Tls no.
+
+Username Attribute uid
+User Object Class organizationalPerson
+User Search Base dc=test,dc=com
+User Search Filter
+User Search Scope sub
+User Group Name Attribute uid
+
+Group Member Attribute memberUid
+Group Name Attribute cn
+Group Object Class posixGroup
+Group Search Base dc=test,dc=com
+Group Search Filter
+
++++++
