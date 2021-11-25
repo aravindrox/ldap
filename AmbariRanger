@@ -21,7 +21,7 @@ Bind anonymously [true/false] (false):  false
 Handling behavior for username collisions [convert/skip] for LDAP sync (convert):  convert
 Force lower-case user names [true/false] (true): true
 Results from LDAP are paginated when requested [true/false] (false): false
-ambari.ldap.connectivity.bind_dn: cn=service,dc=test,dc=com
+ambari.ldap.connectivity.bind_dn: cn=service,dc=hadoop,dc=com
 ambari.ldap.connectivity.bind_password: *****
 Save settings [y/n] (y)?
 
@@ -33,14 +33,14 @@ Syncing ranger with ldap.
 COMMON CONFIGS:
 ===============
 LDAP/AD URL ldap://madhu.vpc.cloudera.com:389
-Bind USer cn=service,dc=test,dc=com
+Bind USer cn=service,dc=hadoop,dc=com
 Bind User Password admin
 Incremental sync no
 Enable LDAP Start Tls no.
 
 Username Attribute uid
 User Object Class organizationalPerson
-User Search Base dc=test,dc=com
+User Search Base dc=hadoop,dc=com
 User Search Filter
 User Search Scope sub
 User Group Name Attribute uid
@@ -48,7 +48,7 @@ User Group Name Attribute uid
 Group Member Attribute memberUid
 Group Name Attribute cn
 Group Object Class posixGroup
-Group Search Base dc=test,dc=com
+Group Search Base dc=hadoop,dc=com
 Group Search Filter
 
 +++++
